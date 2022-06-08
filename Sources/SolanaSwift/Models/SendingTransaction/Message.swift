@@ -28,7 +28,7 @@ extension SolanaSDK.Transaction {
             self.instructions = instructions
         }
         
-        func serialize() throws -> Data {
+        public func serialize() throws -> Data {
             // Header
             let header = encodeHeader()
             
@@ -61,7 +61,7 @@ extension SolanaSDK.Transaction {
             return data
         }
         
-        static func from(data: Data) throws -> Message {
+        public static func from(data: Data) throws -> Message {
             var data = data
             
             let numRequiredSignatures = data.popFirst()!
